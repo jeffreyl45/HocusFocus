@@ -11,9 +11,6 @@ cap = cv2.VideoCapture(0)
 # Timer to keep track of time since last face detection
 timer = time.time()
 
-# Flag to check if audio is currently playing
-audio_playing = False
-
 while True:
     # Get a frame from the video capture object
     ret, frame = cap.read()
@@ -40,7 +37,6 @@ while True:
     else:
         # Update the timer
         timer = time.time()
-        audio_playing = False
         # Iterate over the detected faces
         for (x, y, w, h) in faces:
             # Draw a rectangle around the face
